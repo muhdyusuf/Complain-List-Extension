@@ -69,7 +69,7 @@
 
     const searchParams=new URLSearchParams(data).toString()
 
-    chrome.runtime.sendMessage({redirect:`http://192.168.82.103:54782/index.html?${searchParams}`});
+    chrome.runtime.sendMessage({redirect:`https://jobsheetgenerator.netlify.app?${searchParams}`});
 
     
   }
