@@ -1,0 +1,38 @@
+{
+    "name":"Borang Job Extensions",
+    "description":"dynamiclly create jobsheet uisng data from site",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+      "service_worker":"background.js"
+    },
+    "content_scripts":[
+        {
+            "matches":["http://www.syarikatjnl.com/jknshelpdesk/complaint_list.php"],
+            "js":["content-script.js"],
+            "css":["content.css"]
+            
+            
+
+        }
+    ],
+    "permissions": ["storage", "activeTab", "scripting","tabs","https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js","https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "/Asset/icon.png",
+            "32": "/Asset/icon.png",
+            "48": "/Asset/icon.png",
+            "128": "/Asset/icon.png"
+          }
+    },
+    "icons": {
+        "16": "/Asset/icon.png",
+        "32": "/Asset/icon.png",
+        "48": "/Asset/icon.png",
+        "128": "/Asset/icon.png"
+    }
+
+    
+
+}

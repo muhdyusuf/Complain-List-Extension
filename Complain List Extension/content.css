@@ -1,0 +1,19 @@
+.pdf-btn{
+    color:white !important;
+    background-color:#0898A4;
+    padding:10px;
+    text-decoration:none;
+    border-radius:3px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 1rem;
+    width: 80%;
+    text-align: center;
+    
+}
+tbody tr td:nth-child(2){
+    position: relative;
+}
