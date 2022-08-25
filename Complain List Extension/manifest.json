@@ -16,7 +16,7 @@
 
         }
     ],
-    "permissions": ["storage", "activeTab", "scripting","tabs","https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js","https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"],
+    "permissions": ["storage", "activeTab", "scripting","tabs"],
     "action": {
         "default_popup": "popup.html",
         "default_icon": {
