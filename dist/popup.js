@@ -16,18 +16,4 @@ function setPageBackgroundColor() {
   chrome.storage.sync.get("color", ({ color }) => {
     document.body.style.backgroundColor = color;
   });
-  const data={
-    nama:"hioio",
-    nolog:"adsda",
-    masalah:"banyak",
-    lokasi:"sini ranau"
-  }
-
-  const searchParams=new URLSearchParams(data).toString()
-
-  window.location.replace(`https://glistening-bavarois-488c1b.netlify.app?${searchParams}`)
-
-  // const link=document.createElement('a')
-  // link.setAttribute("href",`https://glistening-bavarois-488c1b.netlify.app?${searchParams}`)
-
 }
