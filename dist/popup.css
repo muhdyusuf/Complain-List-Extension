@@ -1,12 +1,17 @@
-.pdf-btn{
-    color:white !important;
-    opacity: .8;
-    padding:10px;
-    border: none;
-    text-decoration:none;
-    border-radius:3px;
-    position: relative;
-    margin-top: 1rem;
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    padding: .5rem;
+}
+footer{
+    width: 300px;
+    font-size: 8px;
+    padding: 0.5rem .2rem;
+    text-align: start;
     background:linear-gradient(180deg, rgba(56,119,0,1) 0%, rgba(30,62,0,1) 100%);
     background-image: linear-gradient(rgb(56, 119, 0) 0%, rgb(30, 62, 0) 100%);
     background-position-x: initial;
@@ -16,11 +21,8 @@
     background-origin: initial;
     background-clip: initial;
     background-color: initial;
-
-    
+    color: whitesmoke;
 }
-tbody tr td:nth-child(2){
-    position: relative;
-    min-height: max-content;
-    
+footer>p{
+    width: 50%;
 }
