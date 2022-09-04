@@ -1,7 +1,7 @@
 @import url('http://fonts.cdnfonts.com/css/lucida-calligraphy-new');
 
 *{
-    font-size: 14px;
+    font-size: .9rem;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,13 +9,13 @@
 body{
     padding: 2rem;
     margin: auto;
-    
+    background-color: #e2e2e2 !important;
 }
 element{
     width: 100%;
     height: auto;
     aspect-ratio: 1/1.4142;
-    background-color: white !important;
+
    
 
 }
@@ -66,25 +66,40 @@ table tr>:first-child{
 .job-detail>div>p{
     margin-bottom: 3px;
 }
-.log{
-    width: 150px;
-}
+/* .log{
+    min-width: 240px;
+ 
+} */
+/* #noLog{
+    min-width: 200px;
+} */
 
-.page1{
-    width: 100%;
-    height: 100%;
-}
-section{
-    padding: 0;
-    margin: 0;
-}
 
 .tandatangan{
     display: grid;
     grid-template-rows: 90px auto;
 }
+
 span{
     margin-left: 3px;
+    position: relative;
+}
+tr{
+    position: relative;
+    
+}
+input[text]{
+    width: 200px;
+    border: none;
+    
+}
+.btn-container>button{
+    margin-right: 5px;
+}
+
+
+#save,#edit{
+    width: 80px;
 }
 @media print{
     h1.logo{
@@ -92,4 +107,5 @@ span{
         font-family: 'Lucida Calligraphy New', sans-serif !important;
         font-weight: bold;
     }
+    
 }

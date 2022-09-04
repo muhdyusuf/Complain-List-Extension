@@ -32,7 +32,7 @@
 
     const col2=(()=>{
         const data=document.querySelector(`tbody tr:nth-child(${row})>td:nth-child(2)`).innerText.split("\n")
-        return {noLog:data[0],lokasi:data[3],}
+        return {noLog:data[0],lokasi:data[3],status:"Dalam proses",tahapKerosakan:3}
     })()
 
     
