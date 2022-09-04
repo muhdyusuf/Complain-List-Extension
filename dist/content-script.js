@@ -57,14 +57,38 @@
     })()
     
     const col6=(()=>{
-        const data=document.querySelector(`tbody>tr:nth-child(${row})>td:nth-child(6)>li`).innerText
-        let [date,time]=data.split("-")
-        date=date.split(",").splice(0,2).join("").replace("IRT : ","")
-        time=time.match(/\d\d:\d\d(a|p)m/ig)[0]
-        const irt=date+" @ "+time
-        const masaLapor=date + " @"
+        function getTime(text){
+            let [date,time]=text.split("-")
+            date=date.split(",").splice(0,2).join("").replace(/(P|O|I)rt\s:\s/ig,"")
+            time=time.match(/\d\d:\d\d(a|p)m/ig)[0]
+            return [date,time]
+        }
+
+        const irtText=document.querySelector(`tbody>tr:nth-child(${row})>td:nth-child(6)>li`).innerText
+        const ortText=document.querySelector(`tbody>tr:nth-child(${row})>td:nth-child(6)>li:nth-of-type(2)`).innerText
+        const prtText=document.querySelector(`tbody>tr:nth-child(${row})>td:nth-child(6)>li:nth-of-type(3)`).innerText
+
+
+        const irt=getTime(irtText).join(" @ ")
+        const masaLapor=getTime(irtText).slice(0,1).join("")+" @ "
+
         
-        return {irt,masaLapor}
+
+        // const irt=date+" @ "+time
+        // const masaLapor=date + " @"
+
+        let [ort,prt,tindakanpembaikan]=["","",""]
+
+        if(window.location.href==="http://www.syarikatjnl.com/jknshelpdesk/complaint_list.php?archived=1"){
+            ort=getTime(ortText).join(" @ ")
+            prt=getTime(prtText).join(" @ ")
+            tindakanpembaikan=document.querySelector(`tbody>tr:nth-child(${row})>td:nth-child(6)>li:nth-last-child(1)`).innerText.split("\n")
+            tindakanpembaikan=tindakanpembaikan.slice(3,tindakanpembaikan.length-1).join(" ")
+
+        }
+
+        
+        return {irt,masaLapor,ort,prt,tindakanpembaikan}
     })()
 
     
