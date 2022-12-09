@@ -9,6 +9,9 @@
     <!-- CSS only -->
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="./css/bootstrap.css">
+    <link href="https://fonts.cdnfonts.com/css/lucida-calligraphy-new" rel="stylesheet">
+                
+
 </head>
 <body >
     <div class="btn-container py-3">
@@ -16,20 +19,20 @@
         <button id="generatePdf" class="btn btn-success">generate PDF</button>
         <button id="reset" class="btn btn-danger">reset</button>
     </div>
-    <div id="element" class="bg-white p-4 rounded border" >
-        <div class="page bg-white" id="page1">
+    <div id="element" class="bg-white px-5 py-4 rounded border" >
+        <div class="page bg-white mx-2" id="page1">
             <div class="header">
                 <h1 class="logo">Syarikat J & L</h1>
-                <div class="d-flex justify-content-between my-2 border-bottom">
-                    <p>TB 451, 1ST Floor, Block L, Bandar Sabindo, 91000 Tawau Sabah, Tel: 011-13316086 
+                <div class="d-flex justify-content-between my-2 border-bottom border-2">
+                    <p class="alamat">TB 451, 1ST Floor, Block L, Bandar Sabindo, 91000 Tawau Sabah, Tel: 011-13316086 
                     </p>
                     <div class="log fw-bold d-flex">
-                        <p>NO LOG: <span id="noLog"></span></p>
+                        <p>NO.LOG: <span id="noLog"></span></p>
                     </div>
                 </div>
             </div>
 
-            <section class="job-detail border-bottom pt-3 pb-4">
+            <section class="job-detail pt-3">
                 <div>
                     <p class="fw-bold">Nama :</p>
                     <span id="nama"></span>
@@ -72,7 +75,7 @@
                         <td id="catatan"></td>
                     </tr>
                     <tr>
-                        <td>Aduan Direkodkan Oleh</td>
+                        <td>Aduan direkodkan oleh</td>
                         <td id="nama2"></td>
                     </tr>
                     <tr>
@@ -81,7 +84,7 @@
                     <tr>
                         <td>Kategori / Subkategori</td>
                         <td id="kategori">
-                            <div class="ps-2 d-flex align-items-center">
+                            <div class="ps-2 pb-1 d-flex align-items-center">
                                 <input type="radio" name="peranti" value="komputer" id="">
                                 <label class="ms-1" for="komputer">komputer</label>
                                 
@@ -100,7 +103,7 @@
                                
                                 
                             </div>
-                            <div class="ps-2">
+                            <div class="ps-2 pb-1">
                                 <p class="fw-bold mb-1">Hardware :</p>
                                 <p class="fw-bold m-0">SoftWare :</p>
                             </div>
@@ -117,21 +120,21 @@
 
                     </tr>
                     <tr>
-                        <td>No Siri</td>
+                        <td>No. Siri</td>
                         <td id="nosiri"></td>
                     </tr>
                     <tr>
-                        <td>No KEWPA</td>
+                        <td>No. KEWPA</td>
                         <td id="noKewpa"></td>
                     </tr>
                     <tr class="">
                         <td colspan="2" class="fw-bold border-end-0">Tindakan Juruteknik</td>
                     </tr>
-                    <tr style="height:70px;" >
+                    <tr style="height:90px;" >
                         <td >Perincian Masalah</td>
                         <td id="perincianMasalah"></td>
                     </tr>
-                    <tr style="height:80px;">
+                    <tr style="height:90px;">
                         <td>Tindakan Pembaikan</td>
                         <td id="tindakanpembaikan"></td>
                     </tr>
@@ -140,15 +143,15 @@
                         <td id="catatan2"></td>
                     </tr>
                     <tr>
-                        <td>Initial Response Time(IRT)</td>
+                        <td>Initial Response Time (IRT)</td>
                         <td id="irt"></td>
                     </tr>
                     <tr>
-                        <td>On-Site Response Time(ORT)</td>
+                        <td>On-Site Response Time (ORT)</td>
                         <td id="ort"></td>
                     </tr>
                     <tr>
-                        <td>Problem Resolution Time(PRT)</td>
+                        <td>Problem Resolution Time (PRT)</td>
                         <td id="prt"></td>
                     </tr>
                     
@@ -160,23 +163,23 @@
                 <table class="table table-borderless table-sm">
                     <tr>
                         <th>
-                            <h5 class="fw-bold">Perhatian:</h5>
+                            <p class="fw-bold font2">Perhatian:</p>
                         </th>
                         <th >
-                            <h5 class="ps-4 fw-bold">Tindakan Pengguna</h5>
+                            <p class="ps-3 fw-bold font2">Tindakan Pengguna</p>
                         </th>
                     </tr>
                     <tr>
                         <td>
-                            <div class="box border p-1">
-                                <p>Pengguna/wakil pengguna perlu menandatangani dan cop pada ruang yang disediakan SETELAH  PENYELENGGARAAN SELESAI. Tindakan akan dikenakan pada pengguna/wakil  pengguna yang GAGAL berbuat demikian.
+                            <div class="box border rounded">
+                                <p class="perhatian">Pengguna/wakil pengguna perlu menandatangani dan cop pada ruang yang disediakan SETELAH  PENYELENGGARAAN SELESAI. Tindakan akan dikenakan pada pengguna/wakil  pengguna yang GAGAL berbuat demikian.
                                 </p>
                             </div>
                         </td>
                         <td class="ps-4">
                                 <div class="text-start tandatangan">
-                                    <p class="border-bottom border-top">Tandatangan dan Cop</p>
-                                    <p class="border-bottom">Nama</p>
+                                    <p class="cop fw-bold">Tandatangan dan Cop</p>
+                                    <p class="cop-nama fw-bold pb-3">Nama</p>
                                 </div>
                         </td>
                         

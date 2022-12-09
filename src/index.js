@@ -17,10 +17,10 @@ import html2pdf from "html2pdf.js";
   function generatePdf(){
     const element=document.querySelector("#page1")
     var opt = {
-      margin:       0.3,
+      margin:       0.4,
       filename:  noLog? `${noLog}.pdf` : 'jobsheet.pdf',
-      image:        { type: 'jpeg', quality: 1 },
-      html2canvas:  { scale: 4 },
+      image:        { type: 'jpeg', quality: 5 },
+      html2canvas:  { scale: 5 },
       jsPDF:        { unit: 'in', format: 'A4', orientation: 'portrait' }
     };
     
