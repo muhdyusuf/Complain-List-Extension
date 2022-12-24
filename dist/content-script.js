@@ -31,8 +31,15 @@
   function generatePdf(row){
 
     const col2=(()=>{
-        const data=document.querySelector(`tbody tr:nth-child(${row})>td:nth-child(2)`).innerText.split("\n")
+        let data
+        try {
+            data=document.querySelector(`tbody tr:nth-child(${row})>td:nth-child(2)`).innerText.split("\n")    
+        } catch (error) {
+            data=["","",""]
+            
+        }
         return {noLog:data[0],lokasi:data[3],status:"Dalam proses",tahapKerosakan:3}
+        
     })()
 
     
@@ -49,7 +56,8 @@
     const col4= (()=>{
         const data=document.querySelector(`tbody>tr:nth-child(${row})>td:nth-child(4)`).innerText.split("\n")
         const tagId=(()=>{
-            if(!data[0].match(/sdk\/0[0-6]\/[0-9]{3}/ig))return " "
+            if(!data)return("")
+            if(!data[0].match(/sdk\/0[0-6]\/[0-9]{3}/ig))return ("")
             return data[0].match(/sdk\/0[0-6]\/[0-9]{3}/ig)
         })()
         return {tagId,catatan:data[1],masalah:data[2],perincianMasalah:data[2]}
@@ -59,8 +67,9 @@
     const col6=(()=>{
         function getTime(text){
             let [date,time]=text.split("-")
-            date=date.split(",").splice(0,2).join("").replace(/(P|O|I)rt\s:\s/ig,"")
-            time=time.match(/\d\d:\d\d(a|p)m/ig)[0]
+            date=date.split(",").splice(0,2).join("").replace(/(P|O|I)rt\s:\s/ig,"")? (date.split(",").splice(0,2).join("").replace(/(P|O|I)rt\s:\s/ig,"")):""
+
+            time=time.match(/\d\d:\d\d(a|p)m/ig)[0]?time.match(/\d\d:\d\d(a|p)m/ig)[0]:""
             return [date,time]
         }
 
@@ -69,17 +78,20 @@
         const prtText=document.querySelector(`tbody>tr:nth-child(${row})>td:nth-child(6)>li:nth-of-type(3)`).innerText
 
 
-        const irt=getTime(irtText).join(" @ ")
-        const masaLapor=getTime(irtText).slice(0,1).join("")+" @ "
+     
 
         
 
         // const irt=date+" @ "+time
         // const masaLapor=date + " @"
 
-        let [ort,prt,tindakanpembaikan]=["","",""]
+        let [irt,masaLapor,ort,prt,tindakanpembaikan]=["","","","",""]
 
-        if(window.location.href==="http://www.syarikatjnl.com/jknshelpdesk/complaint_list.php?archived=1"){
+        try {
+            irt=getTime(irtText).join(" @ ")
+            masaLapor=getTime(irtText).slice(0,1).join("")+" @ "
+
+            if(window.location.href==="http://www.syarikatjnl.com/jknshelpdesk/complaint_list.php?archived=1"){
             ort=getTime(ortText).join(" @ ")
             prt=getTime(prtText).join(" @ ")
             tindakanpembaikan=document.querySelector(`tbody>tr:nth-child(${row})>td:nth-child(6)>li:nth-last-child(1)`).innerText.split("\n")
@@ -87,6 +99,10 @@
 
         }
 
+        } catch (error) {
+            console.log(error)
+            
+        }
         
         return {irt,masaLapor,ort,prt,tindakanpembaikan}
     })()
