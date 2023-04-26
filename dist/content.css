@@ -6,7 +6,6 @@
     text-decoration:none;
     border-radius:3px;
     position: relative;
-    margin-top: 1rem;
     background:linear-gradient(180deg, rgba(56,119,0,1) 0%, rgba(30,62,0,1) 100%);
     background-image: linear-gradient(rgb(56, 119, 0) 0%, rgb(30, 62, 0) 100%);
     background-position-x: initial;
