@@ -8,7 +8,7 @@
     },
     "content_scripts":[
         {
-            "matches":["http://www.syarikatjnl.com/jknshelpdesk/complaint_list.php","http://www.syarikatjnl.com/jknshelpdesk/complaint_list.php?archived=1"],
+            "matches":["http://www.syarikatjnl.com/jknshelpdesk/complaint_list.php"],
             "js":["content-script.js"],
             "css":["content.css"]
             
